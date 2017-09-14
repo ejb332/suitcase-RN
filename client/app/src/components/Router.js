@@ -5,7 +5,7 @@ import Signup from '../components/auth/Signup';
 
 const RouterComponent = () => {
   return (
-  <Router sceneStyle={{ paddingTop: 60 }}>
+  <Router>
     <Scene key="auth">
       <Scene key="login" component={Login} title="Log In" initial />
       <Scene key="signup" component={Signup} title="Sign Up" />
