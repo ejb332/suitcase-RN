@@ -1,3 +1,8 @@
+import {
+  EMAIL_CHANGED,
+  PASSWORD_CHANGED
+} from '../actions/types';
+
 export const defaultState = {
   loading: null,
   loggedIn: null,
@@ -5,9 +10,13 @@ export const defaultState = {
 };
 
 export default (state = defaultState, action) => {
-  let newState = Object.assign({}, state);
+  const newState = Object.assign({}, state);
   console.log('reducerFunction', state, action);
   switch (action.type) {
+    case 'EMAIL_CHANGED':
+      return { ...state, email: action.payload };
+    case 'PASSWORD_CHANGED':
+      return { ...state, password: action.payload };
     case 'LOGIN_REQUEST':
       newState.loading = true;
       console.log('LOGIN_REQUEST', newState);
